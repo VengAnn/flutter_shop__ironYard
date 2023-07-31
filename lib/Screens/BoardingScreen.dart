@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'LoginScreen.dart';
+
 class BoardingScreen extends StatefulWidget {
   const BoardingScreen({super.key});
 
@@ -257,9 +259,59 @@ class _BoardingScreenState extends State<BoardingScreen> {
                 ],
               ),
             ),
+            Positioned(
+              bottom: 0,
+              right: 0,
+              left: 0,
+              child: Container(
+                width: 60,
+                height: 60,
+                margin: const EdgeInsets.only(bottom: 40),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.blue,
+                ),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: const CircleBorder(),
+                  ),
+                  onPressed: () {
+                    nextScreen();
+                  },
+                  child: const Icon(Icons.arrow_forward),
+                ),
+              ),
+            ),
+            //
+            Positioned(
+              bottom: 0,
+              right: 0,
+              child: Container(
+                margin: const EdgeInsets.only(bottom: 40, right: 20),
+                child: InkWell(
+                  onTap: () {
+                    print("on Skip");
+                  },
+                  child: const Text("Skip"),
+                ),
+              ),
+            )
           ],
         ),
       ),
     );
+  }
+
+  void nextScreen() {
+    if (currentIndexpage == 3) {
+      Navigator.push(context, MaterialPageRoute(
+        builder: (context) {
+          return LoginScreen();
+        },
+      ));
+    } else {
+      _pageController.animateToPage(currentIndexpage + 1,
+          duration: Duration(milliseconds: 200), curve: Curves.linear);
+    }
   }
 }
