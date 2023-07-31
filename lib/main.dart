@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:learn_ui_design_with_yt/Screens/SplashScreen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }
