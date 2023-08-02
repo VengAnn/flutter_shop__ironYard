@@ -47,6 +47,6 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void durationNavigate() {
-    Timer(Duration(seconds: 2), navigateToBoardingScreen);
+    Timer(const Duration(seconds: 2), navigateToBoardingScreen);
   }
 }

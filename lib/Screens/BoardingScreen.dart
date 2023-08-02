@@ -41,7 +41,7 @@ class _BoardingScreenState extends State<BoardingScreen> {
             Column(
               children: [
                 Container(
-                  height: 420,
+                  height: 480,
                   child: PageView(
                     onPageChanged: (value) {
                       setState(() {
@@ -235,7 +235,7 @@ class _BoardingScreenState extends State<BoardingScreen> {
                 children: [
                   Container(
                     width: 100,
-                    height: 100,
+                    height: 150,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: 4,
